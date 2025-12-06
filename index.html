@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suzuki Dealer Bandung - Mobil Baru Suzuki</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Suzuki Dealer Bandung</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#beranda" class="nav-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#produk" class="nav-link">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kategori" class="nav-link">Kategori Mobil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#simulasi" class="nav-link">Simulasi Kredit</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tentang" class="nav-link">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#kontak" class="nav-link">Kontak</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <h1>Dealer Resmi Suzuki Bandung</h1>
+                        <p>Dapatkan penawaran terbaik untuk mobil impian Anda</p>
+                        <div class="cta-buttons">
+                            <a href="https://wa.me/628123456789" class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                            </a>
+                            <a href="#promo" class="btn btn-secondary">Lihat Promo Mobil</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="https://via.placeholder.com/500x400" alt="Showroom Suzuki">
+                    </div>
+                    <div class="sales-info">
+                        <img src="https://via.placeholder.com/150x150" alt="Sales Consultant">
+                        <h3>Budi Santoso</h3>
+                        <p>Sales Consultant Suzuki</p>
+                        <a href="https://wa.me/628123456789" class="btn btn-small">
+                            <i class="fab fa-whatsapp"></i> Hubungi Saya
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section id="promo" class="section">
+        <div class="container">
+            <h2 class="section-title">Promo Terbaru</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Promo 1">
+                    <h3>Promo Lebaran</h3>
+                    <p>Dapatkan potongan harga hingga 10 juta rupiah</p>
+                </div>
+                <div class="promo-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Promo 2">
+                    <h3>Promo Kredit Ringan</h3>
+                    <p>DP rendah mulai dari 10%</p>
+                </div>
+                <div class="promo-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Promo 3">
+                    <h3>Promo Trade-in</h3>
+                    <p>Tukar mobil lama Anda dengan mobil baru Suzuki</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter -->
+    <section id="kategori" class="section">
+        <div class="container">
+            <h2 class="section-title">Kategori Mobil</h2>
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="passenger">Passenger</button>
+                <button class="filter-btn" data-category="commercial">Commercial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produk" class="section">
+        <div class="container">
+            <h2 class="section-title">Produk Kami</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Credit Simulation Section -->
+    <section id="simulasi" class="section">
+        <div class="container">
+            <h2 class="section-title">Simulasi Kredit</h2>
+            <div class="simulation-container">
+                <div class="simulation-form">
+                    <div class="form-group">
+                        <label for="sim-car">Pilih Mobil</label>
+                        <select id="sim-car">
+                            <option value="">-- Pilih Mobil --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sim-variant">Pilih Tipe</label>
+                        <select id="sim-variant" disabled>
+                            <option value="">-- Pilih Tipe --</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sim-price">Harga OTR</label>
+                        <input type="text" id="sim-price" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="sim-dp">DP (Down Payment)</label>
+                        <input type="text" id="sim-dp" class="rupiah-input" placeholder="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="sim-tenor">Tenor (bulan)</label>
+                        <select id="sim-tenor">
+                            <option value="12">12 bulan</option>
+                            <option value="24">24 bulan</option>
+                            <option value="36">36 bulan</option>
+                            <option value="48">48 bulan</option>
+                            <option value="60">60 bulan</option>
+                            <option value="72">72 bulan</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sim-interest">Bunga per tahun (%)</label>
+                        <input type="number" id="sim-interest" value="8" min="0" max="20" step="0.1">
+                    </div>
+                    <button id="calculate-btn" class="btn btn-primary">Hitung Simulasi</button>
+                </div>
+                <div class="simulation-result" id="simulation-result">
+                    <h3>Hasil Simulasi</h3>
+                    <div class="result-item">
+                        <span>Total DP:</span>
+                        <span id="result-total-dp">Rp 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Cicilan per bulan:</span>
+                        <span id="result-monthly">Rp 0</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Total Pembayaran:</span>
+                        <span id="result-total">Rp 0</span>
+                    </div>
+                    <a href="https://wa.me/628123456789" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Ajukan Kredit via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Suzuki Dealer Bandung adalah dealer resmi Suzuki yang telah berdiri sejak tahun 2005. Kami menyediakan berbagai jenis mobil Suzuki, mulai dari passenger car hingga commercial vehicle.</p>
+                    <p>Kami berkomitmen untuk memberikan pelayanan terbaik kepada pelanggan dengan menyediakan mobil-mobil berkualitas tinggi dan harga yang kompetitif.</p>
+                    <p>Tim sales kami siap membantu Anda menemukan mobil Suzuki yang sesuai dengan kebutuhan dan anggaran Anda.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/500x300" alt="Showroom Suzuki">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="section">
+        <div class="container">
+            <h2 class="section-title">Kontak Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Alamat</h3>
+                            <p>Jl. Sukajadi No. 123, Bandung, Jawa Barat</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telepon</h3>
+                            <p>(022) 1234567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>0812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@suzukidealerbandung.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor Telepon</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Suzuki Dealer Bandung</h2>
+                    <p>Dealer Resmi Mobil Suzuki</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Link Cepat</h3>
+                    <ul>
+                        <li><a href="#beranda">Beranda</a></li>
+                        <li><a href="#produk">Produk</a></li>
+                        <li><a href="#simulasi">Simulasi Kredit</a></li>
+                        <li><a href="#tentang">Tentang Kami</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Hubungi Kami</h3>
+                    <p><i class="fas fa-phone"></i> (022) 1234567</p>
+                    <p><i class="fab fa-whatsapp"></i> 0812-3456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@suzukidealerbandung.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Suzuki Dealer Bandung. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-product-name">Product Name</h2>
+            </div>
+            <div class="modal-body">
+                <div class="product-image">
+                    <img id="modal-product-image" src="" alt="Product Image">
+                </div>
+                <div class="product-details">
+                    <div class="variant-selector">
+                        <h3>Pilih Tipe</h3>
+                        <div class="variant-buttons" id="variant-buttons">
+                            <!-- Variants will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    <div class="price-info">
+                        <h3>Harga OTR</h3>
+                        <p id="modal-product-price">Rp 0</p>
+                    </div>
+                    <div class="product-specs">
+                        <h3>Spesifikasi Utama</h3>
+                        <div id="modal-product-specs">
+                            <!-- Specs will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    <div class="product-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" data-tab="specs">Spesifikasi Lengkap</button>
+                            <button class="tab-btn" data-tab="credit">Simulasi Kredit</button>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="specs-tab">
+                                <div id="modal-full-specs">
+                                    <!-- Full specs will be dynamically inserted here -->
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="credit-tab">
+                                <div class="modal-credit-form">
+                                    <div class="form-group">
+                                        <label for="modal-car-price">Harga</label>
+                                        <input type="text" id="modal-car-price" readonly>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="modal-dp">DP (Down Payment)</label>
+                                        <input type="text" id="modal-dp" class="rupiah-input" placeholder="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="modal-tenor">Tenor (bulan)</label>
+                                        <select id="modal-tenor">
+                                            <option value="12">12 bulan</option>
+                                            <option value="24">24 bulan</option>
+                                            <option value="36">36 bulan</option>
+                                            <option value="48">48 bulan</option>
+                                            <option value="60">60 bulan</option>
+                                            <option value="72">72 bulan</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="modal-interest">Bunga per tahun (%)</label>
+                                        <input type="number" id="modal-interest" value="8" min="0" max="20" step="0.1">
+                                    </div>
+                                    <button id="modal-calculate-btn" class="btn btn-primary">Hitung Simulasi</button>
+                                    <div class="modal-credit-result" id="modal-credit-result">
+                                        <h3>Hasil Simulasi</h3>
+                                        <div class="result-item">
+                                            <span>Total DP:</span>
+                                            <span id="modal-result-total-dp">Rp 0</span>
+                                        </div>
+                                        <div class="result-item">
+                                            <span>Cicilan per bulan:</span>
+                                            <span id="modal-result-monthly">Rp 0</span>
+                                        </div>
+                                        <div class="result-item">
+                                            <span>Total Pembayaran:</span>
+                                            <span id="modal-result-total">Rp 0</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-cta">
+                        <a href="https://wa.me/628123456789" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
